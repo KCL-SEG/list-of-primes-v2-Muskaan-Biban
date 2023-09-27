@@ -1,14 +1,16 @@
 
 """List of prime numbers generator."""
 """ENTER YOUR SOLUTION HERE!"""
+
 def primes(number_of_primes):
     try:
         if number_of_primes <= 0:
-                raise ValueError
+            raise ValueError("ValueError")
         else:
-            return createPrimes(number_of_primes)
-    except:
-        print(f"OOps we caught a Value Error ")
+             return createPrimes(number_of_primes)
+    except ValueError as e:
+        print(f'We caught a {e.__class__}')
+        
         
 def createPrimes(number_of_primes):
     list = []
@@ -26,3 +28,5 @@ def createPrimes(number_of_primes):
                 list.append(count)
                 count += 1
     return list
+
+primes(-1)
